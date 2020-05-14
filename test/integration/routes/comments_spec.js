@@ -8,7 +8,7 @@ describe('Routes: Comments', () => {
       request
         .get('/comments')
 	.end((err, res) => {
-	  expect(res.body[0].to.eql(comment));
+	    expect(res.body[0]).to.eql(comment);
 	  done(err);
 	});
     });
