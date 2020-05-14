@@ -1,12 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import commentsRoute from './comments/routes';
 
 const app = express();
 
 app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-  res.send('home sweet home');
-});
+app.use('/comments', commentsRoute);
 
 export default app;
