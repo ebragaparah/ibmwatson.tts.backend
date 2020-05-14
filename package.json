@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "start": "npm run build && node dist/server.js",
-    "start:dev": "babel-node src/server.js"
+    "start:dev": "babel-node src/server.js",
+    "test:integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*_spec.js"
   },
   "author": "",
   "license": "ISC",
