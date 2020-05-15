@@ -1,21 +1,11 @@
-const mysql = require('mysql');
+const Sequelize = require('sequelize');
 
-const connection = mysql.createConnection({
-    host: '172.19.0.2',
-    user: 'abcd',
-    password: 'abcd',
-    database: 'commentsuniverse'
+//criar nomes para estes parametros, talvez um arquivo de configuracao
+
+const sequelize = new Sequelize('commentsuniverse', 'abcd', 'abcd', {
+  host: '172.18.0.2',
+  dialect: 'mysql'
 });
 
-const createComments = `create table if not exists comments (
-                                    id int primary key auto_increment,
-                                    content varchar(255) not null
-                             )`;
-
-connection.query(createComments, (err, results, fields) => {
-    if (err) {
-	console.log(err.message);
-    }
-});
-
-export { connection };
+export {sequelize, Sequelize};
+//exportar como db
