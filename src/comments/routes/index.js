@@ -1,10 +1,11 @@
 import express from 'express';
-//import controller from '../controllers';
+import CommentsController from '../controllers/CommentsController';
 
 const router = express.Router();
-//router.get('/', controller.getAll());
+
 router.get('/', (req, res) => {
-    res.send([{content: 'Any content'}]);
+    const commentsController = new CommentsController();
+    commentsController.getAll(req, res);
 });
 
 export default router;
