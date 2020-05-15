@@ -3,11 +3,11 @@ import Comment from '../models/Comment';
 class CommentsController {
     async find(req, res) {
 	const comments = await Comment.findAll();
-	res.json(comments);
+	res.status(200).json(comments);
     }
 
     create(req, res) {
-	const createSuccess = comment => res.json(comment);
+	const createSuccess = comment => res.status(201).json(comment);
 	const createErrors = err => console.log(err);
 	
 	Comment.create(req.body)
