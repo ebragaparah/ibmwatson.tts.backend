@@ -6,5 +6,5 @@ import {sequelize} from './config/db/initializer';
 const port = 3000;
 
 app.listen(port, () => {
-  console.log('server');
+  console.log('Server is running');
 });
