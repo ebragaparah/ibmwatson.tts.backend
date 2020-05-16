@@ -1,18 +1,16 @@
 import Comment from '../models/Comment';
 
 class CommentsController {
-    async find(req, res) {
-	const comments = await Comment.findAll();
-	res.status(200).json(comments);
+    find(req, res) {
+	Comment.findAll()
+	    .then(comments => res.json(comments))
+	    .catch(err => console.log('comments.controller.find >>> ', err));
     }
-
+    
     create(req, res) {
-	const createSuccess = comment => res.status(201).json(comment);
-	const createErrors = err => console.log(err);
-	
 	Comment.create(req.body)
-	    .then(createSuccess)
-	    .error(createErrors);
+	    .then(comment => res.json(comment))
+	      .catch(err => console.log('comments.controller.create >>> ', err));
     }
 }
 
