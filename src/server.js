@@ -1,5 +1,4 @@
 import app from './app';
-import {sequelize} from './config/db/initializer';
 
 //db.init();
 

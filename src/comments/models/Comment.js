@@ -1,4 +1,4 @@
-import {sequelize, Sequelize} from '../../config/db/initializer';
+import {sequelize, Sequelize} from '../../config/db/connection';
 
 const Comment = sequelize.define('comments', {
     content: {
