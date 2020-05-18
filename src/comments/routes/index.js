@@ -12,4 +12,8 @@ router.post('/', (req, res) => {
     commentsController.create(req, res);
 });
 
+router.get('/:id', (req, res) => {
+    commentsController.synthesize(req, res);
+});
+
 export default router;

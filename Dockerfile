@@ -12,8 +12,10 @@ RUN npm install -g sequelize
 RUN npm install -g mysql2
 RUN npm install -g sequelize-cli
 RUN npm install -g @babel/preset-env
+RUN npm install -g ibm-watson@^5.5.0
 
 COPY ./src /opt/site/src
 COPY ./test /opt/site/test
+COPY ./public /opt/site/public
 
 CMD npm run start:dev
