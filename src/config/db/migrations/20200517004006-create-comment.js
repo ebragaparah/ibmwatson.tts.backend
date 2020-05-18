@@ -9,7 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       content: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        validate: {
+          notEmpty: {
+            msg: 'Content field cannot be empty'
+          }
+        }
       },
       createdAt: {
         allowNull: false,

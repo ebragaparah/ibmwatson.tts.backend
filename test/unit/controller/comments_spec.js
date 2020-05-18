@@ -28,6 +28,7 @@ describe('Controllers: Comments', () => {
 		  .resolves(expectedResponse);
 
 	    controller.find(request, response);
+	    expect().to.be.eql(expectedResponse);
 	    findAllStub.restore(); 
 	});
     });
