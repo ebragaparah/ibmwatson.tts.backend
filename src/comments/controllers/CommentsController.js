@@ -3,7 +3,7 @@ import AudioInterface from '../services/audioInterface';
 
 class CommentsController {
   find(req, res) {
-	  Comment.findAll()
+	    Comment.findAll({order: [['id', 'DESC']]})
 	    .then(comments => res.json(comments))
 	    .catch(err => console.log('comments.controller.find >>> ', err));
   }
